@@ -193,7 +193,7 @@
 <div class="container">
   <div class="header">
     <h1>Breathing <em>Exercise</em></h1>
-    <p class="subtitle">45 seconds · inhale 5s · exhale 5s</p>
+    <p class="subtitle" id="subtitle">45 seconds · inhale 5s · exhale 5s</p>
   </div>
 
   <div class="orb-wrapper">
@@ -220,7 +220,7 @@
 
   <div class="complete-msg" id="completeMsg">
     <h2>✦ Complete</h2>
-    <p>You may now return to the survey</p>
+    <p>Please close this tab and return to the survey</p>
   </div>
 
 </div>
@@ -568,6 +568,7 @@ function startExercise() {
   btnReset.style.display='inline-block';
   completeMsg.style.display='none';
   document.getElementById('preInstruction').style.display='none';
+  document.getElementById('subtitle').style.display='none';
 
   // ── Notify Qualtrics: exercise started ──
   toQualtrics('exerciseStarted', {
@@ -625,6 +626,7 @@ function resetExercise() {
   orb.classList.remove('inhale','exhale');
   completeMsg.style.display='none';
   document.getElementById('preInstruction').style.display='block';
+  document.getElementById('subtitle').style.display='block';
   btnStart.textContent='Begin'; btnStart.disabled=false;
   btnReset.style.display='none';
 }
